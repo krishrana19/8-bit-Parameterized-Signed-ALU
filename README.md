@@ -165,33 +165,44 @@ The testbench verifies:
 
 ---
 
-## Synthesis Results
+## RTL Synthesis Results
 
-=== ALU ===
+The design was synthesized using **Yosys** to verify that the RTL is synthesizable and to obtain synthesis statistics.
 
-   Number of wires:                 59
-   Number of wire bits:            210
-   Number of public wires:          11
-   Number of public wire bits:      35
-   Number of ports:                  8
-   Number of port bits:             32
-   Number of memories:               0
-   Number of memory bits:            0
-   Number of processes:              0
-   Number of cells:                 52
-     $add                            2
-     $and                           11
-     $eq                            17
-     $gt                             1
-     $logic_not                      2
-     $mux                            2
-     $neg                            1
-     $not                            4
-     $or                             3
-     $pmux                           3
-     $reduce_or                      3
-     $sub                            2
-     $xor                            1
+### Synthesis Statistics
+
+| Metric                     | Value |
+| :------------------------- | ----: |
+| Number of Wires            |    59 |
+| Number of Wire Bits        |   210 |
+| Number of Public Wires     |    11 |
+| Number of Public Wire Bits |    35 |
+| Number of Ports            |     8 |
+| Number of Port Bits        |    32 |
+| Number of Memories         |     0 |
+| Number of Memory Bits      |     0 |
+| Number of Processes        |     0 |
+| Number of Cells            |    52 |
+
+### Cell Utilization
+
+| Cell Type    | Count |
+| :----------- | ----: |
+| `$add`       |     2 |
+| `$sub`       |     2 |
+| `$neg`       |     1 |
+| `$and`       |    11 |
+| `$or`        |     3 |
+| `$xor`       |     1 |
+| `$not`       |     4 |
+| `$eq`        |    17 |
+| `$gt`        |     1 |
+| `$logic_not` |     2 |
+| `$mux`       |     2 |
+| `$pmux`      |     3 |
+| `$reduce_or` |     3 |
+
+> **Note:** The synthesis results demonstrate that the design contains only combinational logic with no inferred memories or sequential elements.
 
 ---
 
