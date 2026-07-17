@@ -1,0 +1,21 @@
+
+# Read the Verilog source
+read_verilog src/ALU.v
+
+# Specify the top module
+hierarchy -top ALU
+
+# Convert behavioral processes
+proc
+
+# Optimize the design
+opt
+
+# Remove unused objects
+clean
+
+# Display synthesis statistics
+stat
+
+# Write synthesized netlist
+write_verilog synthesis/alu_netlist.v
